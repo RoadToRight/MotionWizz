@@ -42,11 +42,12 @@ background: url("https://res.cloudinary.com/dp6b6emb9/image/upload/v1770500261/F
 background-repeat: no-repeat;
 background-position: bottom;
 background-size: cover;
+padding: 80px 0px;
 
 .logo img{
     width: 70px;
     height: 70px;
-
+    
 }
     
 `

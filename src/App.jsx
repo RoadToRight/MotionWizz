@@ -7,15 +7,19 @@ import Faqs from './components/Faqs'
 import Footer from './components/Footer'
 import Testimonial from './components/Testimonial'
 import Navbar from './components/Navbar'
+import Contact from './components/Contact'
+import Portfolio from './components/Portfolio'
 
 function App() {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       <Hero />
+      <Portfolio />
       <Testimonial />
       <Faqs />
+      <Contact />
       <Footer />
     </>
   )

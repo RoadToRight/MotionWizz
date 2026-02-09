@@ -2,14 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const IconList = ({ icon, text,url }) => {
+const IconList = ({ icon, text, url }) => {
     return (
         <IconListDiv>
             <div className="icon">{icon}</div>
             <Link to={url}>
                 <div className="text">{text}</div>
             </Link>
-
         </IconListDiv>
     )
 }
@@ -17,5 +16,6 @@ const IconList = ({ icon, text,url }) => {
 export default IconList
 
 const IconListDiv = styled.div`
-    
+    display: flex;
+    gap: 10px;
 `

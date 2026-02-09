@@ -5,15 +5,16 @@ const Logo = () => {
     return (
         <LogoDiv>
             <div class="logo">
-                <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
-                    <polyline class="zigzag" points="0,20 25,5 50,30 75,5 100,30 125,5 150,30 175,5 200,20" />
+                <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" class="zigzag">
+                    <polyline points="10,20 25,12 40,30 50,5 76,30 86,5 105,20 115,8" fill="none" stroke="#ff6a1a"
+                        stroke-width="12" stroke-linejoin="round" />
                 </svg>
-
+                <strong>
+                    <span>Motion</span>
+                    <span>Wizz</span>
+                </strong>
             </div>
-            <strong>
-                <span>Motion</span>
-                <span>Wizz</span>
-            </strong>
+
         </LogoDiv>
     )
 }
@@ -23,37 +24,35 @@ export default Logo
 
 const LogoDiv = styled.div`
       .logo {
-            width: 70px;
-            height: 30px;
-            /* padding: 10px; */
-            box-sizing: border-box;
+            width: 100%;
+            height: 70px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            font-size: 20px;
+            strong{
+                color: #223377;
+            }
         }
 
         svg {
             width: 100%;
-            height: 100%;
-            transform: rotate(12deg);
-            /* 👈 TILT */
+            height: 20px;
+            transform: rotate(14deg);
+            position: relative;
+            left: 15px;
         }
 
         .zigzag {
-            fill: none;
-            stroke: #ff6a1a;
-            stroke-width: 8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-
-            stroke-dasharray: 300;
-            stroke-dashoffset: 300;
-            animation: drawZigzag 2s ease-in-out infinite;
+            stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+            animation: draw 5s ease-in-out infinite;
         }
 
-        @keyframes drawZigzag {
+        @keyframes draw {
             0% {
-                stroke-dashoffset: 300;
+                stroke-dashoffset: 400;
             }
 
             50% {
@@ -61,7 +60,7 @@ const LogoDiv = styled.div`
             }
 
             100% {
-                stroke-dashoffset: -300;
+                stroke-dashoffset: -400;
             }
         }
 `

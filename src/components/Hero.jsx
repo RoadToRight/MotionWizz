@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import styled from 'styled-components'
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Hero = () => {
     return (
@@ -9,7 +10,7 @@ const Hero = () => {
                 <h1>Explainer videos that turn complex ideas into clear decisions. </h1>
                 <h4 className="subheading">Explainer videos that turn “huh?” into “aha!”</h4>
                 <p>Trusted by SaaS and tech teams to explain products, win buy-in and accelerate growth.</p>
-                <Button />
+                <Button text={"Book a free Story Planning "} icon={<IoIosArrowRoundForward size={22} />} />
             </div>
 
             <div className="right_side">
@@ -28,6 +29,11 @@ const HeroSec = styled.section`
     padding: 80px 0px;
     .left_side{
         width:50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+
     }
     .right_side{
         width: 50%;
