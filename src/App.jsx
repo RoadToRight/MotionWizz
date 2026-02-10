@@ -9,6 +9,9 @@ import Testimonial from './components/Testimonial'
 import Navbar from './components/Navbar'
 import Contact from './components/Contact'
 import Portfolio from './components/Portfolio'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 function App() {
 

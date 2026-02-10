@@ -5,7 +5,13 @@ import styled from 'styled-components'
 const Footer = () => {
 
     const menus = [
-        { head: "Company", links: [{ label: "About", url: "" }, { label: "Process", url: "" }, { label: "Portfolio", url: "" }, { label: "Talk To Us", url: "" }] }
+        { head: "Company", links: [{ label: "About", url: "" }, { label: "Process", url: "" }, { label: "Portfolio", url: "" }, { label: "Talk To Us", url: "" }] },
+
+        { head: "Industries", links: [{ label: "Educational", url: "" }, { label: "Whiteboard", url: "" }, { label: "SAAS", url: "" }, { label: "Infographics", url: "" }, { label: "Explainer", url: "" }, { label: "Ai Products", url: "" },] },
+
+        { head: "Resources", links: [{ label: "Blogs", url: "" }, { label: "Process", url: "" }, { label: "Portfolio", url: "" }, { label: "Talk To Us", url: "" }, { label: "How we work", url: "" }] },
+
+        { head: "Join Us", links: [{ label: "Facebook", url: "" }, { label: "LinkedIn", url: "" }, { label: "YouTube", url: "" }, { label: " Instagram", url: "" }] }
     ]
 
     return (
