@@ -114,6 +114,7 @@ background-size: cover; */
 .portfolio_wrapper{
        display: flex;
         gap: 20px;
+        overflow: hidden;
 }
 
 @keyframes marquee {

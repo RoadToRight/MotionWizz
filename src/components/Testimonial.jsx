@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Navigation, Pagination } from 'swiper/modules'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 
 const Testimonial = () => {
@@ -20,10 +21,13 @@ const Testimonial = () => {
                 <h3>Testimonials</h3>
                 <h2>Discover What Other Brands Are Saying About us</h2>
 
-                <Swiper className="reviews_card_wrapper" slidesPerView={3} modules={[Pagination, Navigation]} navigation={{
+                <Swiper className="reviews_card_wrapper" loop={true} spaceBetween={20} slidesPerView={3} modules={[Pagination, Navigation,Autoplay]} navigation={{
                     prevEl: ".prev-btn",
                     nextEl: ".next-btn"
-                }} pagination={{ clickable: true, el: ".custom_pagination", renderProgressbar: () => { } }}>
+                }} pagination={{ clickable: true, el: ".custom_pagination", renderProgressbar: () => { } }} autoplay={{
+                    delay:3000,
+                    disableOnInteraction:false
+                }}>
 
                     {reviewsData?.map(({ name, designation, review, pic }) => {
                         return (
@@ -53,9 +57,12 @@ const Testimonial = () => {
 
                 </Swiper>
 
-                <div className="custom_pagination"></div>
-                <div className="prev-btn">Prev</div>
-                <div className="next-btn">Next</div>
+                <div className="swiper_controls">
+                    <div className="navigation prev-btn"><FaLongArrowAltLeft /></div>
+
+                    <div className="custom_pagination"></div>
+                    <div className="navigation next-btn"><FaLongArrowAltRight /></div>
+                </div>
 
 
             </div>
@@ -69,14 +76,60 @@ export default Testimonial
 const TestimonialSec = styled.div`
 
     padding: 80px 0px;
+    .swiper_controls{
+        display: flex;  
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        background-color: #E4E4EE;
+            padding: 6px;
+            gap: 10px;
+            border-radius: 100px;
+            margin: 0 auto;
+            margin-top: 10px;
+    }
+    .navigation{
+         display: flex;  
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        border-radius: 100px;
+        color: white;
+        cursor: pointer;
+        transition: all 300ms ease;
+    }
+    .navigation:hover{
+        background-color: #223377;
+    }
+       .prev-btn{
+            background-color: #C8C8C8;
+                /* color: #223377; */
 
+        }
+        .next-btn{
+            background-color: #fd5b26;
+        }
+    .custom_pagination{
+        .swiper-pagination-bullet:hover{
+              background-color: #223377;
+        }
+        .swiper-pagination-bullet{
+            background-color: #ADADAD;
+            opacity: 1;
+            margin: 0px 2px;
+               transition: all 300ms ease;
+        }
+          .swiper-pagination-bullet-active{
+            background-color: #FD5B26;
+        }
+    }
     .reviews_card{
         background: #fff;
-        border: 1px solid #eee;
+        border: 1px solid #fd5b26;
         border-radius: 12px;
         padding: 20px;
-        width: 300px;
-        min-height: 180px;
+        /* width: 300px; */
+        /* min-height: 180px; */
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         display: flex;
         flex-direction: column;
