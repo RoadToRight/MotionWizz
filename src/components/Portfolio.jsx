@@ -23,58 +23,58 @@ const Portfolio = () => {
     return (
         <PortfolioSec>
 
-                <div className="portfolio_top container">
-                    <h4>Creations</h4>
-                    <h2>Work That Speaks Across Industries</h2>
-                    <div className="text_btn">
-                        <p>From tech to healthcare, finance to education, here’s a glimpse of corporate video production we’ve done for companies across a wide range of industries.</p>
-                        <Button text={"View All Works"} />
-                    </div>
+            <div className="portfolio_top container">
+                <h4>Creations</h4>
+                <h2>Work That Speaks Across Industries</h2>
+                <div className="text_btn">
+                    <p>From tech to healthcare, finance to education, here’s a glimpse of corporate video production we’ve done for companies across a wide range of industries.</p>
+                    <Button text={"View All Works"} />
+                </div>
 
+            </div>
+
+
+            <div className="portfolio_bottom">
+
+                <div className="portfolio_wrapper">
+                    {
+                        [1, 2, 3, 4].map(() => {
+                            return (
+                                <div className="portfolio_track">
+                                    {topImages?.map((img) => {
+                                        return (
+
+                                            <img src={img} alt="" />
+
+                                        )
+                                    })}
+                                </div>
+                            )
+                        })
+                    }
                 </div>
 
 
-                <div className="portfolio_bottom">
-
-                    <div className="portfolio_wrapper">
-                        {
-                            [1, 2, 3, 4].map(() => {
-                                return (
-                                    <div className="portfolio_track">
-                                        {topImages?.map((img) => {
-                                            return (
-
-                                                <img src={img} alt="" />
-
-                                            )
-                                        })}
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-
-
-                    <div className="portfolio_wrapper">
-                        {
-                            [1, 2, 3, 4].map(() => {
-                                return (
-                                    <div className="portfolio_track">
-                                        {bottomImages?.map((img) => {
-                                            return (
-                                                <img src={img} alt="" />
-                                            )
-                                        })}
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-
-
-
-
+                <div className="portfolio_wrapper">
+                    {
+                        [1, 2, 3, 4].map(() => {
+                            return (
+                                <div className="portfolio_track">
+                                    {bottomImages?.map((img) => {
+                                        return (
+                                            <img src={img} alt="" />
+                                        )
+                                    })}
+                                </div>
+                            )
+                        })
+                    }
                 </div>
+
+
+
+
+            </div>
 
         </PortfolioSec>
     )
@@ -107,7 +107,7 @@ background-size: cover; */
     animation: marquee 40s linear infinite;
     img{
         width: 550px;
-        height: 400px;
+        height: auto ;
         object-fit: cover;
     }
 }
@@ -123,6 +123,12 @@ background-size: cover; */
     }
     to{
         transform: translate(calc(-100% - 20px));
+    }
+}
+
+@media (max-width:1024px){
+    .portfolio_track {
+        
     }
 }
 
