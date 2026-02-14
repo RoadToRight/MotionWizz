@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Logo from './Logo'
 import { Link } from 'react-router-dom'
+import Button from './Button'
 
 const Navbar = () => {
 
@@ -17,7 +18,7 @@ const Navbar = () => {
 
     return (
         <Nav>
-            <AppBar sx={{ background: "transparent", padding: "10px 0px" }} position='sticky'>
+            <AppBar sx={{ background: "transparent", padding: "10px 0px", boxShadow:"none" }} position='sticky'>
                 <Box class="container">
                     <Toolbar sx={{ display: "flex", justifyContent: "space-between", padding: "0px !important" }}>
                         <Typography>
@@ -27,8 +28,8 @@ const Navbar = () => {
 
                         </Typography>
 
-                        <Box >
-                            <MenuList className='' sx={{ display: "flex", gap: "8px" }}>
+                        <Box>
+                            <MenuList className='nav_ul' sx={{ display: "flex", gap: "12px" }}>
                                 {Menu?.map(({ main, submenu }) => {
                                     return (
                                         <>
@@ -41,6 +42,8 @@ const Navbar = () => {
                                         </>
                                     )
                                 })}
+
+                                <Button text={"Get a Quote"}/>
                             </MenuList>
                         </Box>
 
@@ -54,5 +57,9 @@ const Navbar = () => {
 export default Navbar
 
 const Nav = styled.nav`
-    
+    .nav_ul a{
+        color: #1b2c7a;
+        text-decoration: none;
+        font-weight: 700;
+    }
 `

@@ -27,16 +27,21 @@ const HeroSec = styled.section`
     
     display: flex;
     padding: 80px 0px;
+        flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     .left_side{
-        width:50%;
+        width:60%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: start;
-
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
     }
     .right_side{
-        width: 50%;
+        width: 70%;
     }
     .right_side video{
         width: 100%;

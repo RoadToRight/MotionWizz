@@ -12,12 +12,14 @@ import Portfolio from './components/Portfolio'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import ThreeHero from './components/ThreeHero'
 
 function App() {
 
   return (
     <>
       <Navbar />
+      <ThreeHero />
       <Hero />
       <Portfolio />
       <Testimonial />
