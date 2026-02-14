@@ -8,7 +8,7 @@ const ThreeHero = () => {
     return (
         <MainHeroContainer>
             <div className="text_container">
-                <span className="highlight">Motion Wizz</span>
+                <span className="highlight">Motions Wizz</span>
                 <h1>Grow your users. Smarter.</h1>
                 <p>Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups.</p>
                 <div className="input">
