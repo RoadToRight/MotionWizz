@@ -56,7 +56,7 @@ p {
   transform: translate(-50%, -50%);
   background-image: conic-gradient(from var(--angle), #FF5705, #fff);
   z-index: -1;
-  padding: 3px;
+  padding: 1.5px;
   animation: 3s spin linear infinite;
   border-radius: 100px;
 }
@@ -78,7 +78,7 @@ p {
 
 
 .container {
-  max-width: 1280px;
+  max-width: 1240px;
   margin: 0 auto;
   width: 100%;
   padding-left: 20px !important;

@@ -13,6 +13,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import ThreeHero from './components/ThreeHero'
+import LogoSlider from './components/LogoSlider'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
     <>
       <Navbar />
       <ThreeHero />
+      <LogoSlider />
       <Hero />
       <Portfolio />
       <Testimonial />

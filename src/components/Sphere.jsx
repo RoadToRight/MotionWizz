@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { useFrame } from '@react-three/fiber';
-import { useTexture } from '@react-three/drei';
+import { OrbitControls, useTexture } from '@react-three/drei';
 const Sphere = () => {
 
     const sphereRef = useRef();
@@ -19,9 +19,9 @@ const Sphere = () => {
         const width = window.innerWidth;
 
         if (width < 600) {           // small screens
-            setRadius(4.3);
+            setRadius(4);
         } else if (width < 1200) {   // medium screens
-            setRadius(2.1);
+            setRadius(5);
         } else {                     // large screens
             setRadius(4.8);
         }
@@ -39,6 +39,14 @@ const Sphere = () => {
             <ambientLight intensity={10} />
             <directionalLight position={[3, 3, 3]} intensity={1.2} />
             <pointLight position={[-3, -3, 3]} intensity={1} color="#1b2c7a" />
+
+            <OrbitControls
+                enableRotate={true}
+                enableZoom={false}
+                enablePan={false}
+                minPolarAngle={Math.PI / 2}   // lock vertical rotation
+                maxPolarAngle={Math.PI / 2}   // lock vertical rotation
+            />
 
             <mesh ref={sphereRef} position={[0, -3.6, 0]}>
                 <sphereGeometry args={[radius, 64, 64]} />

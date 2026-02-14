@@ -34,8 +34,8 @@ const MainHeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: calc(100vh - 90px);
-
+  height: calc(85vh - 90px);
+  cursor: pointer;
   
 .text_container{
     display: flex;

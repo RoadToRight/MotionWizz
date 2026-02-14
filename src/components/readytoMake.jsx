@@ -38,7 +38,7 @@ const readytoMake = () => {
         <Ready ref={ReadyDiv}>
             <div className="left_section">
                 <h3>Ready to make a video? 🎉</h3>
-                <p>New to swril365? You can try us out before formal engagement. Really!</p>
+                <p>New to MotionWizz? You can try us out before formal engagement. Really!</p>
             </div>
             <div className="right_section">
                 <Button text={"Let's Talk"} />

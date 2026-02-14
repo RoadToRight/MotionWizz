@@ -18,4 +18,8 @@ export default IconList
 const IconListDiv = styled.div`
     display: flex;
     gap: 10px;
+
+    a{
+        color: black;
+    }
 `

@@ -5,19 +5,24 @@ import { LuPhoneCall } from "react-icons/lu";
 import { IoIosMail } from "react-icons/io";
 import { FaMapLocationDot } from "react-icons/fa6";
 import Map from './Map';
+import Snake from './Snake';
 
 const Contact = () => {
   return (
     <ContactSec>
 
+
       <div className="container contact_container">
+
         <div className="left_side_contact">
+          <Snake />
+
           <h2>Let's Connect</h2>
           <p>Fill out this form to get started. Whether you have a script ready or just an idea, this helps us understand your goals, timeline, and vision so we can recommend the best approach and give you an accurate quote for your video.</p>
           <div className="icon_list_Wrapper">
-            <IconList icon={<LuPhoneCall />} text={"+447956305106"} />
-            <IconList icon={<IoIosMail />} text={"hello@motionwizz.com"} />
-            <IconList icon={<FaMapLocationDot />} text={"BASE, Greenheys Ln, Manchester M15 6LR, United Kingdom"} />
+            <IconList icon={<LuPhoneCall color='white' />} text={"+447956305106"} />
+            <IconList icon={<IoIosMail color='white' />} text={"hello@motionwizz.com"} />
+            <IconList icon={<FaMapLocationDot color='white' />} text={"BASE, Greenheys Ln, Manchester M15 6LR, United Kingdom"} />
           </div>
 
           <Map />
@@ -93,6 +98,22 @@ const ContactSec = styled.section`
   position: relative;
   overflow: hidden;
 
+  .left_side_contact {
+    background: url("/Group 60 (2).png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+  padding: 30px 20px 30px 20px;
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.1);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #eceaea;
+}
+
+.icon_list_Wrapper a{
+    color: white;
+}
+
   &::before {
     content: '';
     position: absolute;
@@ -131,7 +152,7 @@ const ContactSec = styled.section`
   .contact_container {
     display: flex;
     gap: 60px;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
     z-index: 1;
   }
@@ -154,7 +175,7 @@ const ContactSec = styled.section`
 
   .left_side_contact h2 {
     font-weight: 700;
-    color: black;
+    color: white;
     margin-bottom: 20px;
     line-height: 1.2;
     letter-spacing: -0.5px;
@@ -166,11 +187,13 @@ const ContactSec = styled.section`
 
   .left_side_contact > p {
     font-size: 16px;
-    color: black;
+    color: white;
     line-height: 1.8;
     margin-bottom: 40px;
     font-weight: 400;
     letter-spacing: 0.3px;
+    
+    
   }
 
   .icon_list_Wrapper {
@@ -178,6 +201,7 @@ const ContactSec = styled.section`
     flex-direction: column;
     gap: 24px;
     margin-bottom: 50px;
+    max-width: 300px;
   }
 
   .right_side_contact {

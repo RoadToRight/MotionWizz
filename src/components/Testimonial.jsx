@@ -21,13 +21,28 @@ const Testimonial = () => {
                 <h3>Testimonials</h3>
                 <h2>Discover What Other Brands Are Saying About us</h2>
 
-                <Swiper className="reviews_card_wrapper" loop={true} spaceBetween={20} slidesPerView={3} modules={[Pagination, Navigation,Autoplay]} navigation={{
+                <Swiper className="reviews_card_wrapper" loop={true} spaceBetween={20} slidesPerView={3} modules={[Pagination, Navigation, Autoplay]} navigation={{
                     prevEl: ".prev-btn",
                     nextEl: ".next-btn"
-                }} pagination={{ clickable: true, el: ".custom_pagination", renderProgressbar: () => { } }} autoplay={{
-                    delay:3000,
-                    disableOnInteraction:false
-                }}>
+                }} pagination={{ clickable: true, el: ".custom_pagination" }} autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false
+                }}
+                    breakpoints={{
+                        300: {
+                            slidesPerView: 1,
+                        },
+                        767: {
+                            slidesPerView: 1,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                        }
+                    }}
+                >
 
                     {reviewsData?.map(({ name, designation, review, pic }) => {
                         return (
@@ -75,7 +90,7 @@ export default Testimonial
 
 const TestimonialSec = styled.div`
 
-    padding: 80px 0px;
+    padding: 0px 0px;
     .swiper_controls{
         display: flex;  
         justify-content: center;

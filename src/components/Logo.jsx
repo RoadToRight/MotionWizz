@@ -4,10 +4,10 @@ import styled from 'styled-components'
 const Logo = () => {
     return (
         <LogoDiv>
-            <div class="logo">
-                <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" class="zigzag">
+            <div className="logo">
+                <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" className="zigzag">
                     <polyline points="10,20 25,12 40,30 50,5 76,30 86,5 105,20 115,8" fill="none" stroke="#ff6a1a"
-                        stroke-width="12" stroke-linejoin="round" />
+                        strokeWidth="12" strokeLinejoin="round" />
                 </svg>
                 <strong>
                     <span>Motion</span>
