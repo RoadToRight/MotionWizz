@@ -32,7 +32,7 @@ const LogoDiv = styled.div`
             justify-content: center;
             font-size: 20px;
             strong{
-                color: #223377;
+                color: #000000;
             }
         }
 

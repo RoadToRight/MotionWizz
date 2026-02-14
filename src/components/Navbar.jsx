@@ -1,4 +1,3 @@
-import { AppBar, Box, Drawer, IconButton, MenuList, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Logo from './Logo'
@@ -17,81 +16,76 @@ const Navbar = () => {
         { main: "About Us" },
     ]
 
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    const isMobile = false;
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     return (
         <Nav>
-            <AppBar sx={{ background: "transparent", padding: "10px 0px", boxShadow: "none" }} position='sticky'>
-                <Box className="container">
-                    <Toolbar sx={{ display: "flex", justifyContent: "space-between", padding: "0px !important" }}>
-                        <Typography>
-                            {/* <img width={70} src="https://res.cloudinary.com/dp6b6emb9/image/upload/v1770498867/Logo-2-1.png_1_uaok4j.webp" alt="" /> */}
-                            <Logo />
+            <div className="nav_container">
 
+                <div className="logo_section">
+                    <Logo />
+                </div>
 
-                        </Typography>
+                <div className="menu_section">
+                    {
+                        isMobile ? (
+                            <>
+                                <IconButton onClick={() => setDrawerOpen(true)}>
+                                    <MdMenu color='white' />
+                                </IconButton>
+                                <div
+                                    anchor="left"
+                                    open={drawerOpen}
+                                    onClose={() => setDrawerOpen(false)}
+                                    className='Drawer'
+                                >
+                                    {Menu?.map(({ main, submenu }) => {
+                                        return (
+                                            <div key={main}>
+                                                <Link><ul>{main}</ul></Link>
+                                                {submenu && submenu.length > 0 ? submenu?.map((subitem) => {
+                                                    return (
+                                                        <Link key={subitem}><li>{subitem}</li></Link>
+                                                    )
+                                                }) : null}
+                                            </div>
+                                        )
+                                    })}
+                                </div>
 
-                        {
-                            isMobile ? (
-                                <>
-                                    <IconButton>
-                                        <MdMenu />
-                                    </IconButton>
-                                    <Drawer
-                                        anchor="right"
-                                        open={drawerOpen}
-                                        onClose={() => setDrawerOpen(false)}
+                            </>
+                        ) : (
+                            <div>
 
-                                    >
-                                        {Menu?.map(({ main, submenu }) => {
-                                            return (
-                                                <div key={main}>
-                                                    <Link><MenuList>{main}</MenuList></Link>
-                                                    {submenu && submenu.length > 0 ? submenu?.map((subitem) => {
-                                                        return (
-                                                            <Link key={subitem}><MenuList>{subitem}</MenuList></Link>
-                                                        )
-                                                    }) : null}
-                                                </div>
-                                            )
-                                        })}
-                                    </Drawer>
+                                <ul className='nav_ul' style={{ display: "flex", gap: "12px", justifyContent: "center", alignItems: "center" }}>
+                                    {Menu?.map(({ main, submenu }) => {
+                                        return (
+                                            <div key={main}>
+                                                <Link><ul>{main}</ul></Link>
+                                                {submenu && submenu.length > 0 ? submenu?.map((subitem) => {
+                                                    return (
+                                                        <Link key={subitem}><li style={{ padding: "0px" }}>{subitem}</li></Link>
+                                                    )
+                                                }) : null}
+                                            </div>
+                                        )
+                                    })}
 
-                                </>
-                            ) : (
-                                <Box>
-
-                                    <MenuList className='nav_ul' sx={{ display: "flex", gap: "12px" }}>
-                                        {Menu?.map(({ main, submenu }) => {
-                                            return (
-                                                <div key={main}>
-                                                    <Link><MenuList>{main}</MenuList></Link>
-                                                    {submenu && submenu.length > 0 ? submenu?.map((subitem) => {
-                                                        return (
-                                                            <Link key={subitem}><MenuList>{subitem}</MenuList></Link>
-                                                        )
-                                                    }) : null}
-                                                </div>
-                                            )
-                                        })}
-
-                                        <Button text={"Get a Quote"} />
-                                    </MenuList>
+                                </ul>
 
 
 
 
-                                </Box>
-                            )
-                        }
+                            </div>
+                        )
+                    }
+                </div>
+                <Button text={"Get a Quote"} />
+
+            </div>
 
 
-
-                    </Toolbar>
-                </Box>
-            </AppBar >
         </Nav >
     )
 }
@@ -99,9 +93,42 @@ const Navbar = () => {
 export default Navbar
 
 const Nav = styled.nav`
+    position: sticky;
+    top: 10px;
+    z-index: 99;
+
+.nav_container{
+max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+
+backdrop-filter: blur(30px);
+    display: flex;
+justify-content: space-between;
+align-items: center;
+border: 1px solid #D4D4D4;
+margin-top: 10px;
+border-radius: 100px;
+padding: 5px 30px ;
+box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
+}
+li{
+    list-style: none;
+}
+.Drawer{
+    display: flex;
+    gap: 20px;
+}
     .nav_ul a{
-        color: #1b2c7a;
+        color: #000;
         text-decoration: none;
         font-weight: 700;
+    }
+    .nav_ul {
+                margin-top: 18px;
+
+    }
+    .Drawer .MuiDrawer-paper{
+        width:100%
     }
 `

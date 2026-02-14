@@ -81,9 +81,9 @@ const Portfolio = () => {
 
                 <div className="portfolio_wrapper">
                     {
-                        [1, 2, 3, 4].map(() => {
+                        [1, 2, 3, 4].map((_, index) => {
                             return (
-                                <div className="portfolio_track">
+                                <div className="portfolio_track" key={index}>
                                     {topMedia?.map((img, index) => {
                                         return (
 
@@ -103,12 +103,12 @@ const Portfolio = () => {
 
                 <div className="portfolio_wrapper">
                     {
-                        [1, 2, 3, 4].map(() => {
+                        [1, 2, 3, 4].map((_, index) => {
                             return (
-                                <div className="portfolio_track">
-                                    {bottomMedia?.map((img) => {
+                                <div className="portfolio_track" key={index}>
+                                    {bottomMedia?.map((img,index) => {
                                         return (
-                                            <div className='image_div'>
+                                            <div className='image_div' key={img + index}>
                                                 <img src={img.image} alt="" />
                                                 <div className="play_btn" onClick={() => handlePopup(img.video)}><FaPlay /></div>
                                             </div>
