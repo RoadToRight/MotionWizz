@@ -24,7 +24,8 @@ export default Snake
 
 const SnakeDiv = styled.div`
 position: absolute;
-top: -20px;
+top: 40px;
+
 
 .snake {
   display: flex;

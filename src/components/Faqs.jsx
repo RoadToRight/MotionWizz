@@ -126,11 +126,9 @@ const FaqsWrapper = styled.section`
       top: 20px;
       left: 0px;
       object-fit: contain;
-      max-width: 450px;
-      margin: 0 auto;
-    }
+      }
     .accordian_wrapper{
-      width: 50%;
+      width: 70%;
       margin-top: 55px;
     }
   }
@@ -271,8 +269,14 @@ const FaqsWrapper = styled.section`
   }
 
   /* Responsive Design */
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding: 60px 0;
+
+    .image_faqs_wrapper{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
     h2 {
       font-size: 36px;
@@ -281,6 +285,8 @@ const FaqsWrapper = styled.section`
 
     .accordian_wrapper {
       gap: 12px;
+      width: 100% !important;
+      margin: 0;
     }
 
     .ques {

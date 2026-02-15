@@ -63,4 +63,14 @@ const LogoDiv = styled.div`
                 stroke-dashoffset: -400;
             }
         }
+
+        @media (max-width:767px){
+            .logo{
+                align-items: start;
+                width: max-content;
+                strong{
+                color: #1b2c7a;
+            }
+            }
+        }
 `

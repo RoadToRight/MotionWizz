@@ -67,6 +67,7 @@ const Testimonial = () => {
                     delay: 3000,
                     disableOnInteraction: false
                 }}
+
                     breakpoints={{
                         300: {
                             slidesPerView: 1,
@@ -85,7 +86,7 @@ const Testimonial = () => {
 
                     {reviewsData?.map(({ name, designation, review, pic }) => {
                         return (
-                            <SwiperSlide style={{ paddingTop: "30px" }}>
+                            <SwiperSlide style={{ paddingTop: "30px" }} className='testimonial_slide'>
                                 <div className="reviews_card">
                                     <div className="quote_icon">“</div>
                                     <div className="stars">★★★★★</div>
@@ -177,6 +178,12 @@ const TestimonialSec = styled.div`
             background-color: #FD5B26;
         }
     }
+
+ .testimonial_slide {
+  display: flex !important;
+  height: auto;
+}
+
     .reviews_card{
         background: #fff;
         border: 1px solid #fd5b26;
@@ -189,6 +196,7 @@ const TestimonialSec = styled.div`
         flex-direction: column;
         gap: 10px;
         position: relative;
+        justify-content: space-between;
         p{
             font-size: 14px;
         }

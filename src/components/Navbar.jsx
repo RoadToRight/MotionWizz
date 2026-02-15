@@ -4,7 +4,7 @@ import Logo from './Logo'
 import { Link } from 'react-router-dom'
 import Button from './Button'
 import { MdMenu } from "react-icons/md";
-
+import { MdCancel } from "react-icons/md";
 const Navbar = () => {
 
     const Menu = [
@@ -25,23 +25,25 @@ const Navbar = () => {
             <Nav>
                 <div className="nav_container">
 
-                    <div className="logo_section">
-                        <Logo />
-                    </div>
+
 
                     <div className="menu_section">
                         {
                             isMobile ? (
                                 <>
-                                    <div onClick={() => setDrawerOpen(true)}>
-                                        <MdMenu color='white' />
+
+                                    <div className='cancel_icon_div' onClick={() => setDrawerOpen(false)}>
+                                        <MdCancel color='#ef5527' size={30} className='cancel_icon' />
                                     </div>
+
                                     <div
-                                        anchor="left"
                                         open={drawerOpen}
-                                        onClose={() => setDrawerOpen(false)}
+                                        onClick={() => setDrawerOpen(false)}
                                         className='Drawer'
                                     >
+                                        <div className="logo_section">
+                                            <Logo />
+                                        </div>
                                         {Menu?.map(({ main, submenu }) => {
                                             return (
                                                 <div key={main}>
@@ -60,7 +62,11 @@ const Navbar = () => {
                             ) : (
                                 <div>
 
+
                                     <ul className='nav_ul' style={{ display: "flex", gap: "12px", justifyContent: "center", alignItems: "center" }}>
+                                        <div className="logo_section">
+                                            <Logo />
+                                        </div>
                                         {Menu?.map(({ main, submenu }) => {
                                             return (
                                                 <div key={main}>
@@ -83,6 +89,10 @@ const Navbar = () => {
                             )
                         }
                     </div>
+
+                    <div onClick={() => setDrawerOpen(true)}>
+                        <MdMenu color='white' />
+                    </div>
                     <Button text={"Get a Quote"} />
 
                 </div>
@@ -96,7 +106,8 @@ const Navbar = () => {
 export default Navbar
 
 const Nav = styled.nav`
-    position: sticky;
+    /* position: sticky; */
+    position: relative;
     top: 10px;
     z-index: 99;
 
@@ -132,15 +143,57 @@ li{
 
     }
     @media (max-width:1024px){
-          .menu_section {
-        background-color: #ef5527;
-        position: fixed;
-        right: 0px;
-        height: 100%;
-        .Drawer{
-        flex-direction: column;
+        padding: 0px 0px;
 
+        .nav_container{
+            backdrop-filter:unset;
         }
+        
+          .menu_section {
+        background-color: #ffffff;
+        position: fixed;
+        right: 0;
+        z-index: 4;
+        height: 100vh;
+        bottom: 0;
+        top: 0px;
+        width: 100%;
+        padding: 20px;
+    .Drawer {
+  display: flex;
+  flex-direction: column;
+  gap:0px;
+}
+
+.Drawer a {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.Drawer > div{
+  padding: 20px ;
+  border-bottom:1px solid white;
+
+}
+
+.Drawer > div:hover{
+    background-color: #ef5527;
+    a{
+    color: white;
+
+    }
+}
+.cancel_icon{
+    margin-left: auto;
+    display: inline-block;
+}
+.cancel_icon_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
     }
     }
   

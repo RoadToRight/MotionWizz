@@ -106,7 +106,7 @@ const Portfolio = () => {
                         [1, 2, 3, 4].map((_, index) => {
                             return (
                                 <div className="portfolio_track" key={index}>
-                                    {bottomMedia?.map((img,index) => {
+                                    {bottomMedia?.map((img, index) => {
                                         return (
                                             <div className='image_div' key={img + index}>
                                                 <img src={img.image} alt="" />
@@ -263,6 +263,9 @@ padding: 80px 0px;
 }
 
 @media (max-width:1024px){
+    .text_btn p{
+        width: 100%;
+    }
     .portfolio_track {
         
     }

@@ -59,9 +59,8 @@ p {
   border-radius: 100px;
 }
 
-.nav_section {
-  position: relative;
-}
+
+.nav_section {}
 
 .highlight::before {
   filter: blur(1.5em);
@@ -126,5 +125,26 @@ button {
 
   &:active {
     transform: translateY(-1px);
+  }
+}
+
+@media (max-width:1024px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+}
+
+@media (max-width:767px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 26px;
   }
 }

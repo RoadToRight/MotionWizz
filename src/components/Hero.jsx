@@ -77,4 +77,10 @@ background:
         border-radius: 12px;
     }
 
+    @media (max-width:767px){
+        .left_side{
+            width: 100%;
+        }
+    }
+
 `

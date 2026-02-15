@@ -61,13 +61,13 @@ const FooterSec = styled.footer`
   padding: 80px 0 30px;
   color: #ddd;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg , #000,#000,#000,#ff5e00);
+  background: linear-gradient(135deg , #ffffff,#ffffff,#ffffff,#ff5e00);
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-  }
+  } 
   .list_footer_menus{
     display: flex;
     justify-content: space-between;
@@ -104,7 +104,7 @@ const FooterSec = styled.footer`
 
         a {
           text-decoration: none;
-          color: #ccc;
+          color: black;
           font-size: 0.95rem;
           transition: color 0.3s ease;
 
@@ -126,19 +126,19 @@ const FooterSec = styled.footer`
   }
 
   .footer_bottom {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid black;
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
     font-size: 0.85rem;
-    color: #ccc;
+    color: black;
 
     .policies {
       display: flex;
       gap: 20px;
 
       a {
-        color: #ccc;
+        color: black;
         text-decoration: none;
         transition: color 0.3s ease;
 
