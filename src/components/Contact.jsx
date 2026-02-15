@@ -5,7 +5,6 @@ import { LuPhoneCall } from "react-icons/lu";
 import { IoIosMail } from "react-icons/io";
 import { FaMapLocationDot } from "react-icons/fa6";
 import Map from './Map';
-import Snake from './Snake';
 import TextWrapAnimation from './TextWrapAnimation';
 
 const Contact = () => {

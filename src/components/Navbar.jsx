@@ -16,7 +16,6 @@ const Navbar = () => {
         { main: "About Us" },
     ]
 
-    const isMobile = true;
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     return (
@@ -25,73 +24,50 @@ const Navbar = () => {
             <Nav>
                 <div className="nav_container">
 
-
-
-                    <div className="menu_section">
-                        {
-                            isMobile ? (
-                                <>
-
-                                    <div className='cancel_icon_div' onClick={() => setDrawerOpen(false)}>
-                                        <MdCancel color='#ef5527' size={30} className='cancel_icon' />
-                                    </div>
-
-                                    <div
-                                        open={drawerOpen}
-                                        onClick={() => setDrawerOpen(false)}
-                                        className='Drawer'
-                                    >
-                                        <div className="logo_section">
-                                            <Logo />
-                                        </div>
-                                        {Menu?.map(({ main, submenu }) => {
-                                            return (
-                                                <div key={main}>
-                                                    <Link><ul>{main}</ul></Link>
-                                                    {submenu && submenu.length > 0 ? submenu?.map((subitem) => {
-                                                        return (
-                                                            <Link key={subitem}><li>{subitem}</li></Link>
-                                                        )
-                                                    }) : null}
-                                                </div>
-                                            )
-                                        })}
-                                    </div>
-
-                                </>
-                            ) : (
-                                <div>
-
-
-                                    <ul className='nav_ul' style={{ display: "flex", gap: "12px", justifyContent: "center", alignItems: "center" }}>
-                                        <div className="logo_section">
-                                            <Logo />
-                                        </div>
-                                        {Menu?.map(({ main, submenu }) => {
-                                            return (
-                                                <div key={main}>
-                                                    <Link><ul>{main}</ul></Link>
-                                                    {submenu && submenu.length > 0 ? submenu?.map((subitem) => {
-                                                        return (
-                                                            <Link key={subitem}><li style={{ padding: "0px" }}>{subitem}</li></Link>
-                                                        )
-                                                    }) : null}
-                                                </div>
-                                            )
-                                        })}
-
-                                    </ul>
+                    <div className="logo_section">
+                        <Logo />
+                    </div>
+                    <div className="menu_section" style={{ width: drawerOpen ? "100%" : "0%", padding: drawerOpen ? "20px" : "0px" }}>
 
 
 
+                        <div>
 
+
+                            <ul className='nav_ul Drawer'>
+
+                                <div className='cancel_icon_div' onClick={() => setDrawerOpen(false)}>
+                                    <MdCancel color='#ef5527' size={30} className='cancel_icon' />
                                 </div>
-                            )
-                        }
+
+
+                                {Menu?.map(({ main, submenu }) => {
+                                    return (
+                                        <div key={main}>
+                                            <Link><ul>{main}</ul></Link>
+                                            {submenu && submenu.length > 0 ? submenu?.map((subitem) => {
+                                                return (
+                                                    <Link key={subitem}><li style={{ padding: "0px" }}>{subitem}</li></Link>
+                                                )
+                                            }) : null}
+                                        </div>
+                                    )
+                                })}
+
+                            </ul>
+
+
+
+
+                        </div>
+
                     </div>
 
+
+
+
                     <div onClick={() => setDrawerOpen(true)}>
-                        <MdMenu color='white' />
+                        <MdMenu color='#ef5527' />
                     </div>
                     <Button text={"Get a Quote"} />
 
@@ -133,6 +109,10 @@ li{
     display: flex;
     gap: 20px;
 }
+.cancel_icon_div{
+    display: none;
+    background: transparent !important;
+}
     .nav_ul a{
         color: #000;
         text-decoration: none;
@@ -140,7 +120,10 @@ li{
     }
     .nav_ul {
                 margin-top: 18px;
-
+            display: flex;
+             gap: 12px;
+              justify-content: center;
+              align-items: center;
     }
     @media (max-width:1024px){
         padding: 0px 0px;
@@ -157,12 +140,16 @@ li{
         height: 100vh;
         bottom: 0;
         top: 0px;
-        width: 100%;
-        padding: 20px;
+        width: 0%;
+        padding: 20px 20px 20px 12px;
+        transition: all 300ms ease;
+        overflow: hidden;
     .Drawer {
   display: flex;
   flex-direction: column;
   gap:0px;
+    margin-top: 80px;
+
 }
 
 .Drawer a {
@@ -171,6 +158,7 @@ li{
   font-weight: 600;
   text-decoration: none;
 }
+
 .Drawer > div{
   padding: 20px ;
   border-bottom:1px solid white;
@@ -192,8 +180,23 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
+    display: block;
+    padding: 0px !important;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
+    .nav_ul {
 
+              justify-content: start;
+              align-items: start;
+    }
+
+    }
+    .logo_section{
+        position: relative;
+        z-index: 5;
+        
     }
     }
   

@@ -14,6 +14,7 @@ const VideoPopup = ({ videoUrl, setPopupOpen }) => {
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen={true}
+                loading="lazy"
             ></iframe>
 
         </Popup>

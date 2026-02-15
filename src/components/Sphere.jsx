@@ -1,11 +1,26 @@
-import React, { useEffect, useRef, useState } from 'react'
+import  { useEffect, useMemo, useRef, useState } from 'react'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { useFrame } from '@react-three/fiber';
+import * as THREE from 'three';
 import { OrbitControls, useTexture } from '@react-three/drei';
 const Sphere = () => {
 
     const sphereRef = useRef();
     const [radius, setRadius] = useState(3); // default radius
+
+    const geometry = useMemo(() => new THREE.SphereGeometry(radius, 64, 64), [radius]);
+    const material = useMemo(
+        () =>
+            new THREE.MeshStandardMaterial({
+                color: "#ff5705",
+                roughness: 0.15,
+                metalness: 0.75,
+                emissiveIntensity: 0.6,
+                wireframe: true,
+                flatShading: true,
+            }),
+        []
+    );
 
     // Rotate sphere
     useFrame((state, delta) => {
@@ -19,7 +34,7 @@ const Sphere = () => {
         const width = window.innerWidth;
 
         if (width < 600) {           // small screens
-            setRadius(4);
+            setRadius(3.2);
         } else if (width < 1200) {   // medium screens
             setRadius(5);
         } else {                     // large screens
@@ -48,22 +63,14 @@ const Sphere = () => {
                 maxPolarAngle={Math.PI / 2}   // lock vertical rotation
             />
 
-            <mesh ref={sphereRef} position={[0, -3.6, 0]}>
-                <sphereGeometry args={[radius, 64, 64]} />
-                <meshStandardMaterial
-                    color="#ff5705"
-                    roughness={0.15}
-                    metalness={0.75}
-                    emissiveIntensity={0.6}
-                    wireframe
-                    flatShading
-                />
-            </mesh>
+            <mesh ref={sphereRef} position={[0, -3.6, 0]} geometry={geometry} material={material}>
+
+            </mesh >
 
 
             <EffectComposer>
                 <Bloom
-                    intensity={1.2}
+                    intensity={window.innerWidth < 767 ? 0.5 : 1.2}
                     luminanceThreshold={0.2}
                     luminanceSmoothing={0.9}
                 />

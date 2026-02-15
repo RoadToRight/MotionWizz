@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+
 const LogoSlider = () => {
 
     const logos = [
