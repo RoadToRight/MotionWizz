@@ -16,77 +16,80 @@ const Navbar = () => {
         { main: "About Us" },
     ]
 
-    const isMobile = false;
+    const isMobile = true;
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     return (
-        <Nav>
-            <div className="nav_container">
 
-                <div className="logo_section">
-                    <Logo />
-                </div>
+        <div className='nav_section'>
+            <Nav>
+                <div className="nav_container">
 
-                <div className="menu_section">
-                    {
-                        isMobile ? (
-                            <>
-                                <IconButton onClick={() => setDrawerOpen(true)}>
-                                    <MdMenu color='white' />
-                                </IconButton>
-                                <div
-                                    anchor="left"
-                                    open={drawerOpen}
-                                    onClose={() => setDrawerOpen(false)}
-                                    className='Drawer'
-                                >
-                                    {Menu?.map(({ main, submenu }) => {
-                                        return (
-                                            <div key={main}>
-                                                <Link><ul>{main}</ul></Link>
-                                                {submenu && submenu.length > 0 ? submenu?.map((subitem) => {
-                                                    return (
-                                                        <Link key={subitem}><li>{subitem}</li></Link>
-                                                    )
-                                                }) : null}
-                                            </div>
-                                        )
-                                    })}
+                    <div className="logo_section">
+                        <Logo />
+                    </div>
+
+                    <div className="menu_section">
+                        {
+                            isMobile ? (
+                                <>
+                                    <div onClick={() => setDrawerOpen(true)}>
+                                        <MdMenu color='white' />
+                                    </div>
+                                    <div
+                                        anchor="left"
+                                        open={drawerOpen}
+                                        onClose={() => setDrawerOpen(false)}
+                                        className='Drawer'
+                                    >
+                                        {Menu?.map(({ main, submenu }) => {
+                                            return (
+                                                <div key={main}>
+                                                    <Link><ul>{main}</ul></Link>
+                                                    {submenu && submenu.length > 0 ? submenu?.map((subitem) => {
+                                                        return (
+                                                            <Link key={subitem}><li>{subitem}</li></Link>
+                                                        )
+                                                    }) : null}
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+
+                                </>
+                            ) : (
+                                <div>
+
+                                    <ul className='nav_ul' style={{ display: "flex", gap: "12px", justifyContent: "center", alignItems: "center" }}>
+                                        {Menu?.map(({ main, submenu }) => {
+                                            return (
+                                                <div key={main}>
+                                                    <Link><ul>{main}</ul></Link>
+                                                    {submenu && submenu.length > 0 ? submenu?.map((subitem) => {
+                                                        return (
+                                                            <Link key={subitem}><li style={{ padding: "0px" }}>{subitem}</li></Link>
+                                                        )
+                                                    }) : null}
+                                                </div>
+                                            )
+                                        })}
+
+                                    </ul>
+
+
+
+
                                 </div>
+                            )
+                        }
+                    </div>
+                    <Button text={"Get a Quote"} />
 
-                            </>
-                        ) : (
-                            <div>
-
-                                <ul className='nav_ul' style={{ display: "flex", gap: "12px", justifyContent: "center", alignItems: "center" }}>
-                                    {Menu?.map(({ main, submenu }) => {
-                                        return (
-                                            <div key={main}>
-                                                <Link><ul>{main}</ul></Link>
-                                                {submenu && submenu.length > 0 ? submenu?.map((subitem) => {
-                                                    return (
-                                                        <Link key={subitem}><li style={{ padding: "0px" }}>{subitem}</li></Link>
-                                                    )
-                                                }) : null}
-                                            </div>
-                                        )
-                                    })}
-
-                                </ul>
-
-
-
-
-                            </div>
-                        )
-                    }
                 </div>
-                <Button text={"Get a Quote"} />
-
-            </div>
 
 
-        </Nav >
+            </Nav >
+        </div>
     )
 }
 
@@ -128,7 +131,17 @@ li{
                 margin-top: 18px;
 
     }
-    .Drawer .MuiDrawer-paper{
-        width:100%
+    @media (max-width:1024px){
+          .menu_section {
+        background-color: #ef5527;
+        position: fixed;
+        right: 0px;
+        height: 100%;
+        .Drawer{
+        flex-direction: column;
+
+        }
     }
+    }
+  
 `

@@ -8,11 +8,50 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 const Testimonial = () => {
 
     const reviewsData = [
-        { name: "Ike Levick", designation: "Founder at Curio Communications", review: "This was my first time working with the team at Motion Wizz and they walked me through the process and explained how it all worked. They were patient with our feedback, polite and determined to deliver a great animation. I would recommend working with them very much!", pic: "/person1.webp" },
-        { name: "Ike Levick", designation: "Founder at Curio Communications", review: "This was my first time working with the team at Motion Wizz and they walked me through the process and explained how it all worked. They were patient with our feedback, polite and determined to deliver a great animation. I would recommend working with them very much!", pic: "/person1.webp" },
-        { name: "Ike Levick", designation: "Founder at Curio Communications", review: "This was my first time working with the team at Motion Wizz and they walked me through the process and explained how it all worked. They were patient with our feedback, polite and determined to deliver a great animation. I would recommend working with them very much!", pic: "/person1.webp" },
-        { name: "Ike Levick", designation: "Founder at Curio Communications", review: "This was my first time working with the team at Motion Wizz and they walked me through the process and explained how it all worked. They were patient with our feedback, polite and determined to deliver a great animation. I would recommend working with them very much!", pic: "/person1.webp" },
-    ]
+        {
+            name: "Kinsey Crim",
+            designation: "Events and Marketing Manager at HSWERX",
+            review:
+                "Working with Motion Wizz was AMAZING. They took the time to understand exactly what I wanted the video to look like and were incredibly patient with all my revisions. Not only did their professionalism and visual appeal EXCEED my expectations, but their quick responsiveness and high level of cooperation made the entire process smooth and enjoyable. This was a GREAT experience",
+            pic: "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771117559/kinsey-crim_1_jfogje.webp",
+        },
+        {
+            name: "Noah Tanghe",
+            designation: "Student International Management at Hogeschool Gent",
+            review:
+                "Working with Motion Wizz team was a very smooth experience. One of their greatest strengths is their flexibility and responsiveness. Whenever they were asked to step in, they did so perfectly and usually delivered excellent results. They bring their own experience and perspective to the table, which truly elevates the final result. Overall, I’m very satisfied with both the collaboration and the outcome.",
+            pic: "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771117558/Noah-Tanghe_1_qhrcwo.webp",
+        },
+        {
+            name: "Ike Levick",
+            designation: "Founder at Curio Communications",
+            review:
+                "This was my first time working with the team at Motion Wizz and they walked me through the process and explained how it all worked. They were patient with our feedback, polite and determined to deliver a great animation. I would recommend working with them very much!",
+            pic: "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771117558/person1_1_j47o88.webp",
+        },
+        {
+            name: "James Pearson",
+            designation: "Senior Manager at JGP Consultancy",
+            review:
+                "They have been exceptional and we will certainly work together in future. We’re delighted with the final video and it does exactly what we asked. We worked with Motion Wizz Team throughout and their communication was excellent. We would thoroughly recommend them and their services.",
+            pic: "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771117558/james-pearson_1_hrjaiy.webp",
+        },
+        {
+            name: "Ines Durruti",
+            designation: "Global Head of Product Design at Mapal Group",
+            review:
+                "Working with Motion Wizz Team has been an excellent experience. They were super quick to respond and deliver the animated videos, always maintaining very good quality and attention to detail. They were also extremely flexible with revisions and patient throughout the whole process, which made the collaboration smooth and professional. Highly recommended!",
+            pic: "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771117559/ines-durruti_1_r737ve.webp",
+        },
+        {
+            name: "Devam Sukhija",
+            designation: "Managing Director at We Buy Life Policy",
+            review:
+                "Really great communication and super quick with some updates that were required to our animations that had previously been done. Couldn’t recommend more, thank you for all your hard work and help!",
+            pic: "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771117558/Devam-Sukhija_1_miza5i.webp",
+        },
+    ];
+
 
     return (
         <TestimonialSec>
@@ -164,7 +203,6 @@ const TestimonialSec = styled.div`
     .person_info{
         display: flex;
         gap: 10px;
-        justify-content: center;
         align-items: center;
     }
     .quote_icon{

@@ -61,6 +61,10 @@ p {
   border-radius: 100px;
 }
 
+.nav_section {
+  position: relative;
+}
+
 .highlight::before {
   filter: blur(1.5em);
   opacity: 0.5;
