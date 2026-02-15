@@ -69,7 +69,7 @@ const Faqs = () => {
 
         <div className="image_faqs_wrapper">
           <div className="image_section">
-            <img src="/faqs.webp" alt="" />
+            <img src="https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122725/faqs_fonxjz.webp" alt="" />
           </div>
 
           <div className="accordian_wrapper">

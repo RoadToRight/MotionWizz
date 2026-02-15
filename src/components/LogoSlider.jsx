@@ -7,16 +7,16 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 const LogoSlider = () => {
 
     const logos = [
-        "/logo.webp",
-        "/logo (2).webp",
-        "/logo (3).webp",
-        "/logo (4).webp",
-        "/logo (5).webp",
-        "/logo (6).webp",
-        "/logo (7).webp",
-        "/logo (5).webp",
-        "/logo (6).webp",
-        "/logo (7).webp",
+        "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122448/logo_7_1_zoqlgd.webp",
+        "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122447/logo_3_1_jbaufr.webp",
+        "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122447/logo_6_1_wwxgax.webp",
+        "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122447/logo_5_1_j5ofrr.webp",
+        "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122447/logo_4_1_cstuqw.webp",
+        "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122446/logo_1_wlrzkz.webp",
+        "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122446/logo_2_1_zi1qwy.webp",
+        "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122447/logo_4_1_cstuqw.webp",
+        "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122446/logo_1_wlrzkz.webp",
+        "https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122446/logo_2_1_zi1qwy.webp",
     ]
 
     return (
@@ -31,7 +31,7 @@ const LogoSlider = () => {
                 }}>
                     {logos?.map((logo, index) => {
                         return (
-                            <SwiperSlide key={logo+index}>
+                            <SwiperSlide key={logo + index}>
                                 <div className="logo_card">
                                     <img src={logo} alt={`Logo ${index + 1}`} />
                                 </div>

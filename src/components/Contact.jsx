@@ -99,7 +99,7 @@ const ContactSec = styled.section`
   overflow: hidden;
 
   .left_side_contact {
-    background: url("/Group 60 (2).png");
+    background: url("https://res.cloudinary.com/dp6b6emb9/image/upload/v1771122690/Group_60_2_bgl8on.webp");
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
